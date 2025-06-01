@@ -2,24 +2,15 @@ module.exports = {
   apps: [
     {
       name: "gateway",
-      script: "./gateway/index.js",
-      env: {
-        PORT: 3000,
-      },
+      script: "gateway/index.js"
     },
     {
-      name: "users-service",
-      script: "./users-service/index.js",
-      env: {
-        PORT: 4001,
-      },
+      name: "users",
+      script: "services/users/index.js"
     },
     {
-      name: "products-service",
-      script: "./products-service/index.js",
-      env: {
-        PORT: 4002,
-      },
-    },
-  ],
+      name: "products",
+      script: "services/products/index.js"
+    }
+  ]
 };
