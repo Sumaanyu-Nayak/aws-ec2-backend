@@ -27,6 +27,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             cd ${{ secrets.EC2_PATH }}
+            npm install
             npm install -g pm2
             pm2 start ecosystem.config.js || pm2 restart ecosystem.config.js
             pm2 save
