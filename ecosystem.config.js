@@ -1,8 +1,26 @@
 module.exports = {
   apps: [
     {
+      name: "gateway",
+      script: "gateway/index.js"
+    },
+    {
+      name: "users",
+      script: "services/users/index.js"
+    },
+    {
+      name: "products",
+      script: "services/products/index.js"
+    }
+  ]
+};
+
+
+module.exports = {
+  apps: [
+    {
       name: 'gateway',
-      script: './gateway/index.js',
+      script: 'gateway/index.js',
       watch: true,
       env: {
         PORT: 3000,
@@ -10,8 +28,8 @@ module.exports = {
       },
     },
     {
-      name: 'users-service',
-      script: './services/users/index.js',
+      name: 'users',
+      script: 'services/users/index.js',
       watch: true,
       env: {
         PORT: 4001,
@@ -19,8 +37,8 @@ module.exports = {
       },
     },
     {
-      name: 'products-service',
-      script: './services/products/index.js',
+      name: 'products',
+      script: 'services/products/index.js',
       watch: true,
       env: {
         PORT: 4002,

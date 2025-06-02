@@ -1,6 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const app = express();
+
+const port = process.env.PORT || 3000;
 
 app.use("/users", createProxyMiddleware({
   target: "http://localhost:4001",
@@ -25,6 +28,6 @@ app.get("/all", (req, res) => {
   res.json({ message: "This is the API Gateway. Use /users or /products to access services." });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("API Gateway running on http://localhost:3000");
 });
